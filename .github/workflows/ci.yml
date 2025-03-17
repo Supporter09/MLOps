@@ -34,7 +34,11 @@ jobs:
 
       - name: Install CML
         run: |
-          npm install -g @iterative/cml  # Install CML globally
+          npm install -g @dvcorg/cml
+          sudo apt-get install -y \
+          libcairo2-dev libfontconfig-dev \
+          libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
+          npm install -g vega-cli vega-lite
 
       - name: Evaluate Model
         env:
