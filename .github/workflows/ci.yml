@@ -32,6 +32,10 @@ jobs:
       - name: Train Model
         run: make train
 
+      - name: Install CML
+        run: |
+          npm install -g @iterative/cml  # Install CML globally
+
       - name: Evaluate Model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
